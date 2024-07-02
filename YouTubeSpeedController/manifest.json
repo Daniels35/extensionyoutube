@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Speed Controller",
+    "version": "1.0",
+    "description": "YouTube Speed Controller is a simple and effective tool to increase the playback speed of YouTube videos beyond the default 2x limit. Whether you're looking to save time or just want to speed through content, this extension allows you to customize the playback speed up to 5x. Enjoy faster video playback with a convenient slider interface, and support the development with an optional PayPal donation button.",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "36": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
